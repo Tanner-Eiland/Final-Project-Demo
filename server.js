@@ -8,6 +8,7 @@ const errorHandler = require("./middleware/errorHandler");
 const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbConfig");
 const mongoose = require('mongoose');
+const fs = require('fs');
 const PORT = process.env.PORT || 3000;
 
 // ConnectDB
@@ -23,6 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
+
 
 
 // Routes
